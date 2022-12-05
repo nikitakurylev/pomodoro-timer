@@ -1,0 +1,55 @@
+{
+  "name": "pomodoro-timer",
+  "displayName": "pomodoro-timer",
+  "description": "A timer for Pomodoro Technique with notification right in VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:pomodoro-timer.start",
+    "onCommand:pomodoro-timer.stop",
+    "onCommand:pomodoro-timer.reset"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pomodoro-timer.start",
+        "title": "Start Timer"
+      },
+      {
+        "command": "pomodoro-timer.stop",
+        "title": "Stop Timer"
+      },
+      {
+        "command": "pomodoro-timer.reset",
+        "title": "Reset Timer"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.73.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3",
+    "@vscode/test-electron": "^2.2.0"
+  }
+}
